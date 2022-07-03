@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getPets } from '../../api/petfinder';
 import Hero from '../../components/hero';
 import Pet from '../../components/pet';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const HomePage = () => {
   const [data, setData] = useState(null);
@@ -58,7 +58,7 @@ const HomePage = () => {
             </Link> // Don't forget to change me!
           ))} */}
           {data.map((animal) => (
-            <Pet animal={animal} />
+            <Pet key={animal.id} animal={animal} />
           ))}
         </div>
       ) : (
